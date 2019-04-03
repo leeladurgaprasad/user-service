@@ -1,0 +1,35 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: user-service
+
+security:
+  basic: false
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    enable: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    appname: user-service
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/microdb
+    username: root
+    password: admin123
